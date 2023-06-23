@@ -10,6 +10,21 @@
   <ItemGroup>
     <None Include="DS_CCM.publish.xml" />
   </ItemGroup>
+  <ItemGroup>
+    <SqlCmdVariable Include="DS_CCM">
+      <Value>$(SqlCmdVar__1)</Value>
+      <DefaultValue>DS_CCM</DefaultValue>
+    </SqlCmdVariable>
+  </ItemGroup>
+  <ItemGroup>
+    <ArtifactReference Include="bin\Debug\DS_CCM.dacpac">
+      <SuppressMissingDependenciesErrors>False</SuppressMissingDependenciesErrors>
+      <DatabaseSqlCmdVariable>DS_CCM</DatabaseSqlCmdVariable>
+    </ArtifactReference>
+  </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="Script.PostDeployment1.sql" />
+  </ItemGroup>
   <Target Name="BeforeBuild">
     <Delete Files="$(BaseIntermediateOutputPath)\project.assets.json" />
   </Target>
