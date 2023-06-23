@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TargetDatabaseName>DS_CCM</TargetDatabaseName>
+    <TargetConnectionString>Data Source=172.30.255.14,51583;Initial Catalog=master;User ID=Ayan.Agrawal;Password=******;Pooling=False;Encrypt=False;Trust Server Certificate=True;Authentication=SqlPassword;Application Name=azdata-GeneralConnection</TargetConnectionString>
+    <AllowIncompatiblePlatform>True</AllowIncompatiblePlatform>
+    <BlockOnPossibleDataLoss>False</BlockOnPossibleDataLoss>
+    <DropPermissionsNotInSource>True</DropPermissionsNotInSource>
+    <DropObjectsNotInSource>True</DropObjectsNotInSource>
+    <DropRoleMembersNotInSource>True</DropRoleMembersNotInSource>
+    <DropStatisticsNotInSource>False</DropStatisticsNotInSource>
+    <IgnoreKeywordCasing>False</IgnoreKeywordCasing>
+    <IgnoreSemicolonBetweenStatements>False</IgnoreSemicolonBetweenStatements>
+    <AllowDropBlockingAssemblies>True</AllowDropBlockingAssemblies>
+    <ExcludeApplicationRoles>True</ExcludeApplicationRoles>
+    <ExcludeCredentials>True</ExcludeCredentials>
+    <ExcludeDatabaseScopedCredentials>True</ExcludeDatabaseScopedCredentials>
+    <ExcludeDatabaseRoles>True</ExcludeDatabaseRoles>
+    <ExcludeExternalDataSources>True</ExcludeExternalDataSources>
+    <ExcludeLogins>True</ExcludeLogins>
+    <ExcludeServerRoleMembership>True</ExcludeServerRoleMembership>
+    <ExcludeServerRoles>True</ExcludeServerRoles>
+    <ExcludeUsers>True</ExcludeUsers>
+    <ProfileVersionNumber>1</ProfileVersionNumber>
+  </PropertyGroup>
+</Project>

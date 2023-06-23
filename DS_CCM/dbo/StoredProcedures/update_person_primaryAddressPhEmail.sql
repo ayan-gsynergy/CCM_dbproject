@@ -1,0 +1,60 @@
+CREATE procedure [dbo].[update_person_primaryAddressPhEmail] (
+          @id int,
+          @type     varchar(120) = NULL,
+          @phone varchar(40) = NULL,
+          @phone_ext varchar(40) = NULL,
+          @email varchar(40) = NULL,
+          @line_1 varchar(30) = NULL,
+          @line_2 varchar(30) = NULL,
+          @line_3 varchar(30) = NULL,
+          @city varchar(30) = NULL,
+          @state varchar(30) = NULL,
+          @country varchar(30) = NULL,
+          @zip varchar(30) = NULL,
+          @po_box_number varchar(30) = NULL,
+          @verified_freeform_address      varchar(300) = NULL,
+	@hash_of_verified_address       varchar(50) = NULL,
+          @verified_line_1				varchar(120)= NULL,
+	@verified_line_2				varchar(120)= NULL,
+	@verified_line_3				varchar(120)= NULL,
+	@verified_city				varchar(60)= NULL,
+	@verified_state				varchar(60)= NULL,
+	@verified_country			varchar(3)= NULL,
+	@verified_zip				varchar(20)= NULL,
+	@verified_po_box_number		varchar(20)= NULL,
+	@is_using_verified		BIT= NULL,
+          @updated_by			varchar(120),
+	      @updated_by_action 	char(32))
+          AS
+          BEGIN
+          SET NOCOUNT ON;
+          UPDATE person_adrs_ph_email  
+          SET type = COALESCE(@type, type),
+          phone = COALESCE(@phone, phone),
+          phone_ext = COALESCE(@phone_ext, phone_ext),
+          email = COALESCE(@email, email),
+          line_1 = COALESCE(@line_1, line_1),
+          line_2 = COALESCE(@line_2, line_2),
+          line_3 = COALESCE(@line_3, line_3),
+          city = COALESCE(@city, city),
+          state = COALESCE(@state, state),
+          country = COALESCE(@country, country),
+          zip = COALESCE(@zip, zip),
+          po_box_number = COALESCE(@po_box_number, po_box_number),
+           verified_freeform_address= COALESCE(@verified_freeform_address, verified_freeform_address),
+		 hash_of_verified_address= COALESCE(@hash_of_verified_address, hash_of_verified_address),
+          verified_line_1 = COALESCE(@verified_line_1, verified_line_1),
+          verified_line_2 = COALESCE(@line_2, verified_line_2),
+          verified_line_3 = COALESCE(@line_3, verified_line_3),
+          verified_city = COALESCE(@city, verified_city),
+          verified_state = COALESCE(@state, verified_state),
+          verified_country = COALESCE(@country, verified_country),
+          verified_zip = COALESCE(@zip, verified_zip),
+          verified_po_box_number = COALESCE(@po_box_number, verified_po_box_number),
+          is_using_verified = COALESCE(@is_using_verified, is_using_verified),
+          [_updated_by]=  @updated_by,
+          [_updated_by_action] = @updated_by_action 
+          WHERE id = @id;
+          END
+GO
+
